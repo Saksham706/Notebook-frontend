@@ -1,39 +1,38 @@
 .navbar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #111827;
   color: white;
-  width: 100%;
+  position: relative;
   box-sizing: border-box;
 }
 
-
-.navbar-left {
+.navbar-left .logo {
   font-size: 20px;
   font-weight: bold;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
 }
 
 .navbar-center {
   display: flex;
-  justify-content: center;
   flex: 1;
+  justify-content: center;
 }
 
 .navbar-list {
   list-style: none;
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .navbar-link {
@@ -65,22 +64,34 @@
   background-color: black;
 }
 
-
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .navbar {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
-    gap: 10px;
   }
 
   .navbar-center {
-    justify-content: flex-start;
+    display: none;
     width: 100%;
+  }
+
+  .navbar-center.active {
+    display: block;
+    margin-top: 10px;
   }
 
   .navbar-list {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    margin-top: 10px;
   }
 
   .sign-in-button {
